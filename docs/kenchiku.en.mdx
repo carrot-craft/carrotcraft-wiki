@@ -8,7 +8,7 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
-import { hard-hat, Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Package } from 'lucide-react';
+import { HardHat, ThumbsUp } from 'lucide-react';
 
 <Callout type="info" title="What is the Building Server?">
 On the Building Server, you can use Creative Mode to build freely within your own designated plots.
@@ -41,9 +41,15 @@ Run the following command to return to the main server.
 ## ✅ What You Can Do
 
 <Cards>
-<Card icon={<hard-hat />} title="Free-form Building" description="You receive two 63x63 plots. Build whatever you like using Creative Mode." />
-<Card icon={<thumbs-up />} title="Like Feature" description="You can 'like' other players' builds." />
+<Card icon={<HardHat />} title="Free-form Building" description="You receive two 63x63 plots. Build whatever you like using Creative Mode." />
+<Card icon={<ThumbsUp />} title="Like Feature" description="You can 'like' other players' builds." />
 </Cards>
+
+<Callout type="info" title="How likes work">
+  - You cannot like your own plot (owner, trusted, or member)
+  - **One** like per plot per player (you can undo and re-like, but the count does not grow)
+  - Players who joined the server less than **3 days** ago cannot like
+</Callout>
 
 <Callout type="warn" title="Prohibited Builds">
 Do not build anything that violates server rules, causes trouble for others, or goes against public order and morals.
