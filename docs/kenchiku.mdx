@@ -8,7 +8,7 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
-import { hard-hat, Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Package } from 'lucide-react';
+import { HardHat, ThumbsUp } from 'lucide-react';
 
 <Callout type="info" title="建築サーバーとは？">
  建築サーバーでは、クリエイティブモードを使用し、自分の区画内で自由な建築を行えます。
@@ -41,9 +41,15 @@ import { hard-hat, Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Pack
 ## ✅ 建築サーバーでできること
 
 <Cards>
-  <Card icon={<hard-hat />} title="自由な建築" description="63×63の区画を1人2区画もらえます。  クリエイティブで好きな建築をすることができます。" />
- <Card icon={<thumbs-up />} title="いいね機能" description="他の人の建築にいいねをすることができます。" />
+  <Card icon={<HardHat />} title="自由な建築" description="63×63の区画を1人2区画もらえます。  クリエイティブで好きな建築をすることができます。" />
+ <Card icon={<ThumbsUp />} title="いいね機能" description="他の人の建築にいいねをすることができます。" />
 </Cards>
+
+<Callout type="info" title="いいねの条件">
+  - 自分の区画（所有・信頼・メンバー）には入れられません
+  - 1人1区画につき **1回** まで（取り消して付け直しはできますが、数は増えません）
+  - サーバーに初めて参加してから **3日** 経っていない人は入れられません
+</Callout>
 
 <Callout type="warn" title="作ってはいけないもの">
 サーバールールに違反するものや他人の迷惑になるもの、公序良俗に反するものは作ってはいけません。
