@@ -1,0 +1,134 @@
+---
+title: Nation Stocks
+description: List a nation and trade its shares — dividends, share issues and takeover bids
+icon: chart-line
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { TrendingUp, Crown, Coins, Vote } from 'lucide-react';
+
+<Callout type="info" title="📈 Nation Stocks">
+  Once a nation (a Towny nation) is **listed**, anyone can **buy and sell its shares with CC**.
+  If the nation grows and becomes popular, the share price goes up, and shareholders receive a **dividend** every week.
+</Callout>
+
+<Cards>
+  <Card icon={<TrendingUp />} title="Trading" description="Any time from /kabu. Buying pushes the price up, selling pushes it down" />
+  <Card icon={<Coins />} title="Dividends" description="Every Saturday 12:00, paid from the nation's weekly profit" />
+  <Card icon={<Crown />} title="The king" description="Applies for listing and sets the offering, dividend rate and share issues" />
+  <Card icon={<Vote />} title="Shareholder meeting" description="Vote on share issues and make takeover bids (TOB)" />
+</Cards>
+
+## 🛒 Buying and selling
+
+`/kabu` opens the list of listed nations. Pick a nation, choose how many shares, check the quote, then confirm.
+
+- **You can always buy and always sell.** You don't need to wait for another player (each nation has a trading "pool" you trade against)
+- **The more you buy, the higher the price per share; the more you sell, the lower.** The amount shown is an estimate — the final amount is set when the trade goes through
+- The fee is **1.5%** of the trade
+- `/kabu p` shows your shares and `/kabu h` your trade history
+
+<Callout type="warn">
+  Share prices can fall. If a nation empties out and nobody wants its shares, the price drops. **Losses are not compensated.** Only use CC you can afford to lose.
+</Callout>
+
+## 💰 Dividends
+
+Every **Saturday at 12:00**, part of the nation's weekly profit (**tax income − upkeep**) is paid to shareholders in proportion to their shares.
+
+- The king sets the payout ratio (dividend rate) from **0 to 100%**
+- If the treasury would drop below three weeks of upkeep, that week's dividend is skipped (so the nation doesn't collapse)
+- Dividends arrive even while you're offline; you get a message when you're in game
+
+## 🏛️ Listing a nation (for kings)
+
+<Steps>
+  <Step>**Apply** — the king applies with `/kabu apply` (listing fee **50,000 CC**)</Step>
+  <Step>**Staff review** — staff check the requirements and approve</Step>
+  <Step>**Start the offering** — the king sets the total shares, the share to release (10–60%) and the price per share with `/kabu ipo`. Anyone can subscribe for 72 hours</Step>
+  <Step>**Listed** — if subscriptions reach half of the shares on offer, the nation is listed and trading begins. Otherwise the offering is cancelled and all subscriptions are refunded</Step>
+</Steps>
+
+**Requirements**
+
+| Requirement | Details |
+|------|------|
+| Nation age | 30 days or more |
+| Active residents | 10 or more residents who logged in within the last 30 days |
+| King's tenure | 14 days or more |
+| Punishments | The king has no punishments in the last 30 days |
+| Listing slots | Up to 5 nations in total (staff may change this) |
+
+About 60% of the CC raised in the offering goes to the treasury and 40% to the trading pool. The treasury's share never has to be paid back and can be spent on growing the nation.
+
+## 👑 Rules for kings
+
+The king holds the most shares and knows the nation best. To protect shareholders, kings follow these rules:
+
+- **Keep at least 30% of the shares**
+- **Announce any sale of your own shares at least 3 days in advance** (the announcement is public and expires after 7 days)
+- CC the king earns from selling shares is **frozen for 30 days**
+- The king cannot trade for **24 hours** before and after changing the dividend rate
+- The same rules continue to apply to a former king for **90 days** after stepping down
+
+## 🗳️ Shareholder meeting
+
+`/kabu soukai <nation>` opens that nation's shareholder meeting screen.
+
+<Accordions>
+  <Accordion title="Share issues (adding shares to raise CC for the treasury)">
+    The king can issue new shares to put CC into the treasury (up to 30% of total shares per year).
+    Because there are more shares, each share is worth less and the price drops.
+
+    - The king proposes with `/kabu issue <shares> <reason>`, and shareholders can vote for **48 hours** (`/kabu vote <nation> yes|no`)
+    - **Rejected if "against" is more than half of the votes cast.** No votes or a tie means it passes
+    - Votes are weighted by the shares held at the deadline. The king and former kings (90 days) cannot vote
+  </Accordion>
+  <Accordion title="TOB (takeover bid)">
+    An offer to **buy every shareholder's shares** (except the king's) at **at least 1.5× the current price**.
+
+    - A member of the nation (a resident of the capital, or the mayor of a town in the nation) makes it with `/kabu tob <nation> <percent>`. The money is held up front
+    - **When the king accepts**, all shares are bought and **the bidder becomes the new king**
+    - If the king declines, the bidder withdraws, or 72 hours pass, the held money is refunded in full
+  </Accordion>
+  <Accordion title="Major shareholder perks">
+    | Holding | Perk |
+    |-------|------|
+    | 1% or more | See the nation's finances in detail (weekly tax income and upkeep) |
+    | 5% or more | Listed by name as a major shareholder |
+    | The largest holder with 10% or more | Listed by name as the top shareholder |
+  </Accordion>
+</Accordions>
+
+## ⛔ Delisting
+
+A nation is delisted when, for example:
+
+- Its residents fall below 5 and don't recover within 14 days of the warning
+- Upkeep stays unpaid (a town goes bankrupt) for 21 days and isn't resolved within 7 days of the warning
+- The king requests it (after 30 days), the nation disbands, or staff decide to
+
+On delisting, **the CC in the trading pool is shared out among shareholders in proportion to their shares** (the king and former kings don't receive any). A warning is shown before delisting.
+
+## 🌐 Trading on the website
+
+The **Stocks** page on the official website shows price charts and recent trades. **Log in with Discord** to trade from the website too.
+
+- When you trade on the website, you also get a message in game. If it wasn't you, stop web trading with `/kabu webstop`
+- Web trading is available to players who first joined at least 7 days ago and have played for 10 hours or more
+
+## ⌨️ Commands
+
+| Command | Description |
+|---------|------|
+| `/kabu` | List of listed nations and trading |
+| `/kabu p` | Your shares |
+| `/kabu h` | Your trade history |
+| `/kabu soukai <nation>` | Shareholder meeting (share issues, TOB, major shareholders) |
+| `/kabu vote <nation> yes\|no` | Vote for / against a share issue |
+| `/kabu tob <nation> <percent>` | Make a TOB (e.g. 150) |
+| `/kabu king` | King's screen (application, offering, dividend rate, sale announcements) |
+| `/kabu webstop` / `/kabu webstart` | Stop / resume trading from the website |
