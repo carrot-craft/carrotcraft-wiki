@@ -6,6 +6,7 @@ icon: trending-up
 
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
 <Callout type="info" title="このページの読み方">
 ブロックを掘る・作物を収穫するといった **普段の行動でスキルが育ちます**。レベルが上がると **専用の能力** が解放され、採掘と農業では **お金も直接もらえます**。
@@ -143,18 +144,17 @@ CarrotCraft には **11種類のスキル** があります。特別な操作は
 
 ## ❓ よくある質問
 
-**Q. スキルを上げないと損ですか？**
-
-普通に遊んでいれば自然に上がります。意識して稼ぎに行かなくても大丈夫です。
-
-**Q. レベルの上限は？**
-
-上限はありません。ただしレベルが上がるほど必要な経験値は増えていきます。
-
-**Q. お金はどこに入りますか？**
-
-サーバーの所持金（CC）にそのまま入ります。`/bal` で確認できます。
-
-**Q. 収入が減ってきた気がします**
-
-その日 10,000 CC を超えていないか `/skills` で確認してください。日本時間 0 時にリセットされます。
+<Accordions>
+  <Accordion title="スキルを上げないと損ですか？">
+    普通に遊んでいれば自然に上がります。意識して稼ぎに行かなくても大丈夫です。
+  </Accordion>
+  <Accordion title="レベルの上限は？">
+    上限はありません。ただしレベルが上がるほど必要な経験値は増えていきます。
+  </Accordion>
+  <Accordion title="お金はどこに入りますか？">
+    サーバーの所持金（CC）にそのまま入ります。`/bal` で確認できます。
+  </Accordion>
+  <Accordion title="収入が減ってきた気がします">
+    その日 10,000 CC を超えていないか `/skills` で確認してください。日本時間 0 時にリセットされます。
+  </Accordion>
+</Accordions>
