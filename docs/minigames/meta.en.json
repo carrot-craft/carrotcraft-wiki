@@ -1,4 +1,5 @@
 {
   "title": "Minigames",
+  "icon": "gamepad",
   "pages": ["index", "magical-sheep", "chicken-bomber"]
 }
