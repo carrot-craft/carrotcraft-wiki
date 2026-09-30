@@ -61,11 +61,42 @@ import { Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Package } from
   Inventories are **separate from the main server**, and **Ender Chests are not shared either**. To bring items back, use the cross-server shared chest: **`/post`**.
 </Callout>
 
+## 🐉 Monthly Reset and the End
+
+Staff reset all resource worlds (Overworld, Nether and End) **at 18:00 on the 1st of every month**. After the reset, some features stay locked until the Ender Dragon is defeated.
+
+### Until the Ender Dragon is defeated
+
+| Item | Type | Description |
+| --- | --- | --- |
+| `/rtp`, `/post`, `/rescue` | spec | Unavailable until the Ender Dragon is defeated |
+| PvP | spec | **Disabled**, both before and after the dragon is defeated |
+
+### Elytra
+
+| Item | Type | Description |
+| --- | --- | --- |
+| After a monthly reset | spec | **Elytra cannot be used to fly** on the resource server (you can still wear, pick up and `/post` them home) |
+| After a purchased reset | spec | In a world whose reset was bought by a player, elytra **can be used again** until the next monthly reset |
+
+<Callout type="info" title="Why can't I fly?">
+  So that the elytra in the End are **easy for everyone to get**, not only for players who can already fly between the outer islands. Use `/rtp` below to reach the outer islands.
+</Callout>
+
+### `/rtp` in the End
+
+| Item | Type | Description |
+| --- | --- | --- |
+| Destination | spec | A fully random spot on the **outer islands, where the End Cities are** — never the central island |
+| Uses | spec | **Up to 3 times a day** (resets at midnight JST) |
+| Landing | spec | Only on solid ground. Attempts that find no ground do not count |
+| Available | spec | After the Ender Dragon is defeated |
+
 ## ✅ Available Features
 
 <Cards>
   <Card icon={<Home />} title="/home" description="Home registration (up to 5, separate from main)" />
-  <Card icon={<Radar />} title="/rtp" description="Random teleport to a fresh mining area" />
+  <Card icon={<Radar />} title="/rtp" description="Random teleport to a fresh mining area (in the End: 3 times a day, to the outer islands)" />
   <Card icon={<Package />} title="/post" description="Cross-server shared chest (use this to bring items home)" />
   <Card icon={<Mic />} title="Voice Chat" description="Chat with players while you mine" />
   <Card icon={<Pickaxe />} title="/co i" description="CoreProtect history lookup" />
@@ -118,7 +149,7 @@ import { Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Package } from
 
 <Accordions>
   <Accordion title="Do I get my items back if I die?">
-    **Death item-loss is not compensated.** Keep Inventory is also disabled. Don't bring valuable items into the resource server.
+    The resource server has **Keep Inventory enabled**, so you keep your items when you die. Chests and builds placed in the resource worlds are still wiped by resets, so take valuables home with `/post`.
   </Accordion>
   <Accordion title="Can I build a base here?">
     A temporary work shed is fine, but **the server may reset periodically**. Build permanent bases on the main server.
