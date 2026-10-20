@@ -8,6 +8,7 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide-react';
 
 <Callout type="info" title="Vote for a free crate key">
@@ -50,7 +51,7 @@ You can vote on the following sites. Each site allows **one vote per 24 hours**:
 
 <Callout type="warn">
   Make sure to enter your **exact Minecraft username** when voting. If you mistype it, you won't receive your key.
-  For the Bedrock Edition, please add *.* to the beginning of your name.
+  For the Bedrock Edition, please add `.` to the beginning of your name.
 </Callout>
 
 ## 🎁 Opening the Vote Crate
@@ -100,8 +101,8 @@ You can vote on the following sites. Each site allows **one vote per 24 hours**:
 
 By using a gacha key, you can obtain other gacha keys.
 
-<Tabs items={['Armor Trim Gacha Key','Weapon Gacha Key','Rare Item Gacha Key','Spawner Gacha Key','Half-Anniversary Gacha Key'}]>
-  <Tab value="Armor Trim Cacha Key">
+<Tabs items={['Armor Trim Gacha Key','Weapon Gacha Key','Rare Item Gacha Key','Spawner Gacha Key','Half-Anniversary Gacha Key']}>
+  <Tab value="Armor Trim Gacha Key">
     Includes all Armor Trim except for the Netherite Upgrade smithing template.
   </Tab>
   <Tab value="Weapon Gacha Key">
@@ -119,7 +120,7 @@ By using a gacha key, you can obtain other gacha keys.
     - Netherite Ingot
   </Tab>
   <Tab value="Spawner Gacha Key">
-     This includes items that are not normally available.。
+     This includes items that are not normally available.
     - Zombie
     - Skeleton
     - Spider
@@ -136,7 +137,8 @@ By using a gacha key, you can obtain other gacha keys.
   </Tab>
 </Tabs>
 <Callout type="info">
-**The odds (drop rates) are not disclosed.** When a rare item is won, a notification is broadcast across the entire server!</Callout>
+  **The odds (drop rates) are not disclosed.** When a rare item is won, a notification is broadcast across the entire server!
+</Callout>
 
 ## 📅 Consecutive Record Rewards
 As you continue to vote each day, your record will accumulate. You will receive rewards on the 7th, 14th, 21st, and 30th days.
@@ -144,7 +146,7 @@ As you continue to vote each day, your record will accumulate. You will receive 
 | Days | Reward |
 | ------ | ------ |
 | 7th | 10,000cc |
-| 14th | Weapon Gacha Key and Armor Trim Gacha Key ×2 |
+| 14th | Weapon Gacha Key and Rare Item Gacha Key |
 | 21st | Rare Item Gacha Key and Armor Trim Gacha Key ×3 |
 | 30th | Silence Armor Trim Smithing Template |
 

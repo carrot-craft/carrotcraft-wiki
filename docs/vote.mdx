@@ -8,6 +8,7 @@ import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide-react';
 
 <Callout type="info" title="投票でガチャキーがもらえる">
@@ -50,7 +51,7 @@ import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide
 
 <Callout type="warn">
   投票時は **正確なMinecraft ID** を入力してください。間違えるとキーがもらえません。  
-統合版の方は、名前の始めに*.*をつけるようにしてください。
+統合版の方は、名前の始めに `.` をつけるようにしてください。
 </Callout>
 
 ## 🎁 投票ガチャの開け方
@@ -100,7 +101,7 @@ import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide
 
 ガチャキーを引くことで、他のガチャキーを入手することができます。
 
-<Tabs items={['装飾ガチャキー','武器ガチャキー','レアアイテムガチャキー','スポナーガチャキー','半年記念ガチャキー'}]>
+<Tabs items={['装飾ガチャキー','武器ガチャキー','レアアイテムガチャキー','スポナーガチャキー','半年記念ガチャキー']}>
   <Tab value="装飾ガチャキー">
     ネザライト強化用鍛冶型以外の装飾がすべて含まれます。
   </Tab>
@@ -143,7 +144,7 @@ import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide
 | 日数 | 報酬 |
 | ------ | ------ |
 | 7日目 | 10,000cc |
-| 14日目 | 武器ガチャキーと装飾ガチャキー2個 |
+| 14日目 | 武器ガチャキーとレアアイテムガチャキー |
 | 21日目 | レアアイテムガチャキーと装飾ガチャキー3個 |
 | 30日目 | 静寂の鍛冶型 |
 
