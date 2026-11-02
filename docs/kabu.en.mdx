@@ -21,7 +21,7 @@ import { TrendingUp, Crown, Coins, Vote } from 'lucide-react';
 
 <Cards>
   <Card icon={<TrendingUp />} title="Trading" description="Any time from /kabu. Buying pushes the price up, selling pushes it down" />
-  <Card icon={<Coins />} title="Dividends" description="Every Saturday 12:00, paid from the nation's weekly profit" />
+  <Card icon={<Coins />} title="Dividends" description="Every Saturday 12:00, based on the share price, paid from the treasury" />
   <Card icon={<Crown />} title="The king" description="Applies for listing and sets the offering, dividend rate and share issues" />
   <Card icon={<Vote />} title="Shareholder meeting" description="Vote on share issues and make takeover bids (TOB)" />
 </Cards>
@@ -32,6 +32,8 @@ import { TrendingUp, Crown, Coins, Vote } from 'lucide-react';
 
 - **You can always buy and always sell.** You don't need to wait for another player (each nation has a trading "pool" you trade against)
 - **The more you buy, the higher the price per share; the more you sell, the lower.** The amount shown is an estimate — the final amount is set when the trade goes through
+- **Buying a lot at once moves the price a lot.** Check the amount you will actually pay on the confirmation screen. Right after listing the pool holds few shares, so the price moves even more
+- The price on screen is "what one share costs against the pool right now". If everyone sells at once, you can't sell at that price
 - The fee is **1.5%** of the trade
 - `/kabu p` shows your shares and `/kabu h` your trade history
 
@@ -53,16 +55,17 @@ You can hand your shares directly to another player, without going through the p
 
 ## 💰 Dividends
 
-Every **Saturday at 12:00**, part of the nation's weekly profit (**tax income − upkeep**) is paid to shareholders in proportion to their shares.
+Every **Saturday at 12:00**, **the average share price of the last 7 days × the weekly yield × the number of shares you hold** is paid from the nation's treasury to shareholders. It does not depend on the nation's tax income.
 
-- The king sets the payout ratio (dividend rate) from **0 to 100%**
-- If the treasury would drop below three weeks of upkeep, that week's dividend is skipped (so the nation doesn't collapse)
+- The king sets the weekly yield from **0 to 10%** (`/kabu dividend <weekly yield %>`)
+- The king's own shares don't receive dividends
+- If the treasury can't keep three weeks of upkeep after paying, that week's dividend is skipped (so the nation doesn't collapse)
 - Dividends arrive even while you're offline; you get a message when you're in game
 
 ## 🏛️ Listing a nation (for kings)
 
 <Steps>
-  <Step>**Apply** — the king applies with `/kabu apply` (listing fee **50,000 CC**)</Step>
+  <Step>**Apply** — the king applies with `/kabu apply` </Step>
   <Step>**Staff review** — staff check the requirements and approve</Step>
   <Step>**Start the offering** — the king sets the total shares, the share to release (10–60%) and the price per share with `/kabu ipo`. Anyone can subscribe for 72 hours. It is not first come, first served: if more shares are requested than offered, everyone gets an equal number at the close and the rest is refunded (one player can request up to the shares on offer)</Step>
   <Step>**Listed** — if subscriptions reach half of the shares on offer, the nation is listed and trading begins. Otherwise the offering is cancelled and all subscriptions are refunded</Step>
@@ -78,7 +81,7 @@ Every **Saturday at 12:00**, part of the nation's weekly profit (**tax income �
 | Punishments | The king has no punishments in the last 30 days |
 | Listing slots | Up to 5 nations in total (staff may change this) |
 
-About 60% of the CC raised in the offering goes to the treasury and 40% to the trading pool. The treasury's share never has to be paid back and can be spent on growing the nation.
+About 60% of the CC raised in the offering goes to the treasury and 40% to the trading pool. When the listing succeeds, a **review fee of 50,000 CC** is taken from the treasury's share. The treasury's share never has to be paid back and can be spent on growing the nation.
 
 ## 👑 Rules for kings
 
@@ -150,6 +153,15 @@ When a nation disbands, it is not delisted right away. **For 48 hours after the 
 
 The payout is not what shareholders paid in. Only the CC left in the pool is shared out, so the amount per share can be much lower than the price shown on screen. Trading fees are not returned. The part of the offering proceeds that went to the nation's treasury belongs to the nation and is not paid out to shareholders on delisting.
 
+## 🎁 Giving and selling shares to a player
+
+You can pass shares directly to one player, without going through the pool.
+
+- `/kabu pay <player> <nation> <shares>` — give shares
+- `/kabu offer <player> <nation> <shares> <total price>` — offer to sell at a price. The other player answers with `/kabu offers`; the trade happens when they accept (offers expire after 24 hours; up to 10 open offers at a time)
+- The sender pays a **5% tax** (based on the higher of the current price and the 7-day average, times the shares; the tax disappears)
+- Shares can't be passed while a share-issue vote or a takeover bid is in progress
+
 ## 🌐 Trading on the website
 
 The **Stocks** page on the official website shows price charts and recent trades. **Log in with Discord** to trade and hand over shares from the website too.
@@ -172,4 +184,9 @@ The **Stocks** page on the official website shows price charts and recent trades
 | `/kabu offers` | List of sale offers (accept, decline, withdraw) |
 | `/kabu king` | King's screen (application, offering, dividend rate, sale announcements, news, shareholders) |
 | `/kabu news <text>` | Post news from the king (kings only) |
+| `/kabu dividend <weekly yield %>` | Set the dividend yield (kings only) |
+| `/kabu early <nation>` | Propose listing early after a sold-out offering (kings only) |
+| `/kabu pay <player> <nation> <shares>` | Give shares |
+| `/kabu offer <player> <nation> <shares> <price>` | Offer to sell shares at a price |
+| `/kabu offers` | Answer the offers you received |
 | `/kabu webstop` / `/kabu webstart` | Stop / resume trading from the website |
