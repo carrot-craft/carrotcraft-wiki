@@ -6,7 +6,7 @@ icon: sparkles
 
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { Mic, ArrowUpDown, Home, Map, Armchair, Lock, Vote, Dices, Sparkles, Rabbit, Box, Pickaxe, Swords, Gavel, CookingPot, HardHat } from 'lucide-react';
+import { Mic, ArrowUpDown, Home, Map, Armchair, Lock, Vote, Dices, Sparkles, Rabbit, Box, Pickaxe, Swords, Gavel, CookingPot, HardHat, Handshake } from 'lucide-react';
 
 <Callout type="info" title="Server Features Catalog">
 This page introduces the main features on CarrotCraft, grouped by category. See each detail page for full usage instructions.
@@ -127,7 +127,8 @@ Compete against other players for a week based on a specific challenge. Medals a
 
 <Cards>
   <Card icon={<Swords />} href="/en/docs/commands#pvp-commands" title="PvP Modes" description="Pick a combat style with /pvp mode. Damage only applies between matching modes." />
-  <Card icon={<Gavel />} href="/en/docs/economy#auctions" title="Auctions" description="Bid on items with /auction. Listings from 5,000cc, 5% fee." />
+  <Card icon={<Gavel />} href="/en/docs/economy#auctions" title="Auctions" description="Bid on items with /auction. You can also bid from the website or Discord." />
+  <Card icon={<Handshake />} href="/en/docs/economy#-trading-with-other-players" title="Trading" description="Shift + right-click a nearby player to swap items and money." />
 </Cards>
 
 ### ⚔️ PvP Modes
@@ -138,9 +139,15 @@ Choose your combat style with `/pvp mode crystal / mace / sword / potion / all`.
 
 ### 🥕 Auctions
 
-An **English-style auction house** for player-to-player sales. List items via `/auction` (from 5,000cc, 10% listing fee, up to 3 listings), bid via GUI or `b <amount>`. Outbid players get instant full refunds; collect winnings from `/auction box` (held 7 days, 5% fee).
+An **English-style auction house** for player-to-player sales. List items via `/auction` (from 5,000cc, 10% listing fee, up to 3 listings), bid via GUI or `b <amount>`. You can also bid from the official website and Discord (link your account with `/link`). Outbid players get instant full refunds; collect winnings from `/auction box` (held 7 days, 5% fee).
 
 [Read more →](/en/docs/economy#auctions)
+
+### 🤝 Trading with other players
+
+**Shift + right-click** a player within 5 blocks to send a trade request. When both players press "Confirm", the items and money each put in are swapped.
+
+[Read more →](/en/docs/economy#-trading-with-other-players)
 
 ## 🍳 Cooking (Farmer's Delight)
 

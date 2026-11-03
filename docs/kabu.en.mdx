@@ -39,6 +39,18 @@ import { TrendingUp, Crown, Coins, Vote } from 'lucide-react';
   Share prices can fall. If a nation empties out and nobody wants its shares, the price drops. **Losses are not compensated.** Only use CC you can afford to lose.
 </Callout>
 
+## 🎁 Giving shares to other players
+
+You can hand your shares directly to another player, without going through the pool.
+
+- **Give** — `/kabu pay <player> <nation> <shares>` gives the shares away
+- **Sell at a set price** — `/kabu offer <player> <nation> <shares> <total price>` sends a sale offer to one player. When they accept it with `/kabu offers`, they pay the price and get the shares
+- Handing over shares costs a tax of **5% of the share price × the number of shares**. The person handing them over pays it (on a sale, it is taken out of the price). The share price used is whichever is higher: the current price or the recent average
+- The sale price must be higher than the tax. Sale offers expire after **24 hours**
+- The king, and anyone who stopped being king less than 90 days ago, can neither give nor receive shares
+- Shares can't be handed over while the nation has a share issue vote or a TOB in progress
+- You can also do this from the Stocks page on the official website
+
 ## 💰 Dividends
 
 Every **Saturday at 12:00**, part of the nation's weekly profit (**tax income − upkeep**) is paid to shareholders in proportion to their shares.
@@ -97,6 +109,8 @@ Kings can post news about what their nation is up to (`/kabu news <text>`, the k
 
 `/kabu soukai <nation>` opens that nation's shareholder meeting screen.
 
+The king can see every shareholder of their nation and how many shares each holds under "Shareholders" in `/kabu king`.
+
 <Accordions>
   <Accordion title="Share issues (adding shares to raise CC for the treasury)">
     The king can issue new shares to put CC into the treasury (up to 30% of total shares per year).
@@ -138,7 +152,7 @@ The payout is not what shareholders paid in. Only the CC left in the pool is sha
 
 ## 🌐 Trading on the website
 
-The **Stocks** page on the official website shows price charts and recent trades. **Log in with Discord** to trade from the website too.
+The **Stocks** page on the official website shows price charts and recent trades. **Log in with Discord** to trade and hand over shares from the website too.
 
 - When you trade on the website, you also get a message in game. If it wasn't you, stop web trading with `/kabu webstop`
 - Web trading is available to players who first joined at least 7 days ago and have played for 10 hours or more
@@ -153,6 +167,9 @@ The **Stocks** page on the official website shows price charts and recent trades
 | `/kabu soukai <nation>` | Shareholder meeting (share issues, TOB, major shareholders) |
 | `/kabu vote <nation> yes\|no` | Vote for / against a share issue |
 | `/kabu tob <nation> <percent>` | Make a TOB (e.g. 150) |
-| `/kabu king` | King's screen (application, offering, dividend rate, sale announcements, news) |
+| `/kabu pay <player> <nation> <shares>` | Give shares |
+| `/kabu offer <player> <nation> <shares> <total price>` | Sell shares to one player at a set price |
+| `/kabu offers` | List of sale offers (accept, decline, withdraw) |
+| `/kabu king` | King's screen (application, offering, dividend rate, sale announcements, news, shareholders) |
 | `/kabu news <text>` | Post news from the king (kings only) |
 | `/kabu webstop` / `/kabu webstart` | Stop / resume trading from the website |

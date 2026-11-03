@@ -29,7 +29,9 @@ CarrotCraft uses an in-game currency called **Carrot Coins (CC)**. The entire se
 |---------|-------------|
 | `/bal` | Check your balance |
 | `/pay <player> <amount>` | Send money |
-| `/baltop` | Richest players ranking |
+| `/baltop` | Richest players ranking (your own rank is shown at the bottom; click it to jump to your page) |
+
+Money sent to you (`/pay`) and shop sales while you are AFK are summed up in one message when you come back. For money sent to you, who sent how much is also kept in `/mail` (toggle "Keep AFK payments in mail" in the settings screen; on by default).
 
 ## 🏪 CarrotMarket (Server Shop)
 
@@ -103,6 +105,8 @@ MajinCraft custom items **consume Majin Points each time you use them**. If you 
 |------|--------------|
 | Vein Pickaxe | 25 pt/use |
 | Timber Axe | 25 pt/use |
+| Mushroom Axe | 25 pt/use |
+| Transcendent Axe | 25 pt/use |
 | Gravity Rod | 40 pt/use |
 | Decoy Totem | 75 pt/use |
 | Blast Arrow | 15 pt/use |
@@ -144,6 +148,13 @@ Use "**Sell an item**" at the bottom left to set the item, starting price, and d
 - Click an item in the list to view details, then bid via the **GUI** or `b <amount>`
 - If someone outbids you, your bid is **refunded in full instantly**
 
+### Bidding from the website or Discord
+
+- On the [Auctions](https://carrotcraft.net/en/auction) page of the official website, log in with Discord to bid
+- On Discord, reply `b <amount>` in the post for a listing to bid
+- You get a Discord DM when someone outbids you and 10 minutes before the auction ends
+- Both need your Minecraft account linked to Discord (`/link`)
+
 ### Collecting
 
 | Command | Description |
@@ -151,6 +162,22 @@ Use "**Sell an item**" at the bottom left to set the item, starting price, and d
 | `/auction` | Open the auction list |
 | `/auction box` | Collect winnings & refunds (**held for 7 days**) |
 | `/auction notify off` | Mute notifications |
+
+## 🤝 Trading with other players
+
+You can swap items and money directly with someone nearby.
+
+<Steps>
+  <Step>Stand within 5 blocks of the other player and **right-click them while holding Shift** to send a trade request</Step>
+  <Step>When they do the same (or click [Accept] in chat), the trade screen opens</Step>
+  <Step>Put in the items you want to give and add money</Step>
+  <Step>When both players press "Confirm", the trade goes through</Step>
+</Steps>
+
+- If anything in the trade changes, both confirmations are cleared
+- Closing the screen or walking away cancels the trade, and your items come back to you
+- If your inventory is full, items go to your collection box (`/trade box`)
+- To stop receiving trade requests, turn off "Receive trade requests" in the settings screen (on by default)
 
 ## 🛒 QuickShop (Player Shops)
 

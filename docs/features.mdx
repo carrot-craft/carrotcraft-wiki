@@ -6,7 +6,7 @@ icon: sparkles
 
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { Mic, ArrowUpDown, Home, Map, Armchair, Lock, Vote, Dices, Sparkles, Rabbit, Box, Pickaxe, Swords, Gavel, CookingPot, HardHat } from 'lucide-react';
+import { Mic, ArrowUpDown, Home, Map, Armchair, Lock, Vote, Dices, Sparkles, Rabbit, Box, Pickaxe, Swords, Gavel, CookingPot, HardHat, Handshake } from 'lucide-react';
 
 <Callout type="info" title="サーバー機能カタログ">
 CarrotCraftで利用できる主要な機能をカテゴリ別に紹介します。各機能の詳しい使い方は、それぞれの詳細ページをご覧ください。
@@ -127,7 +127,8 @@ MOD が無い人や統合版の人は、ブラウザから話せる **[Web 通�
 
 <Cards>
   <Card icon={<Swords />} href="/docs/commands#pvpコマンド" title="PvPモード" description="/pvp mode で戦闘スタイルを選択。同モード間でのみダメージが通る。" />
-  <Card icon={<Gavel />} href="/docs/economy#オークション" title="オークション" description="/auction でアイテムを競り売り。開始5,000cc〜・手数料5%。" />
+  <Card icon={<Gavel />} href="/docs/economy#オークション" title="オークション" description="/auction でアイテムを競り売り。Web・Discord からも入札できる。" />
+  <Card icon={<Handshake />} href="/docs/economy#-プレイヤー同士の取引" title="取引" description="近くの人とシフト＋右クリックで、アイテムやお金を交換。" />
 </Cards>
 
 ### ⚔️ PvPモード
@@ -138,9 +139,15 @@ MOD が無い人や統合版の人は、ブラウザから話せる **[Web 通�
 
 ### 🥕 オークション
 
-プレイヤー間でアイテムを競り売りできる**イングリッシュ式オークション**。`/auction` から出品（開始価格5,000cc〜・出品料10%・同時3件）、入札はGUIまたは `b <金額>`。上回られたら即時全額返金、落札品は `/auction box` で受け取れます（保管7日・手数料5%）。
+プレイヤー間でアイテムを競り売りできる**イングリッシュ式オークション**。`/auction` から出品（開始価格5,000cc〜・出品料10%・同時3件）、入札はGUIまたは `b <金額>`。公式サイトと Discord からも入札できます（`/link` で連携が必要）。上回られたら即時全額返金、落札品は `/auction box` で受け取れます（保管7日・手数料5%）。
 
 [詳細を見る →](/docs/economy#オークション)
+
+### 🤝 プレイヤー同士の取引
+
+近く（5マス以内）にいる人を **シフトを押しながら右クリック** すると取引を申し込めます。2人とも「確定する」を押すと、出したアイテムとお金が交換されます。
+
+[詳細を見る →](/docs/economy#-プレイヤー同士の取引)
 
 ## 🍳 料理（Farmer's Delight）
 
