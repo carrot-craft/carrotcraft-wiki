@@ -1,0 +1,85 @@
+---
+title: Advancements and Titles
+description: CarrotCraft's own advancements, and the titles you earn from them
+icon: trophy
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Callout type="info" title="What are advancements?">
+  Goals you complete as you play on the Nation server. There are more than 80, and some are hidden until you complete them.
+</Callout>
+
+## 🏆 Viewing advancements
+
+On Java Edition, open the advancements screen with the `L` key. CarrotCraft's advancements are split into five tabs.
+
+| Tab | Main contents |
+| --- | --- |
+| CarrotCraft | First steps, towns, chatting with others, and more |
+| Carrots and Cooking | Carrots, cooking, drinks, farming |
+| Money and Trade | Money, shops, auctions, the Compression Artisan |
+| Adventure and Combat | Mining, woodcutting, combat, gear |
+| Casino | Casino games |
+
+You get a chat message when you complete one.
+
+## 🎖 Titles
+
+Some advancements give you a **title** (32 in total). The title you wear shows as an icon in front of your name in chat and TAB.
+
+The color of a title's frame has a meaning.
+
+| Color | Meaning |
+| --- | --- |
+| Red | Only the first player on the server to complete it can have this title |
+| Gold | The first player to earn a title that anyone can earn |
+| White | A title anyone can have |
+
+Titles you earn are not put on automatically. Choose the one you want to wear.
+
+## 🔧 Wearing a title
+
+<Steps>
+  <Step>
+    Open `/uc menu`
+  </Step>
+  <Step>
+    Press "Titles" in the bottom row
+  </Step>
+  <Step>
+    Press the title you want (press "Remove" to take it off)
+  </Step>
+</Steps>
+
+You can also use commands.
+
+| Command | Description |
+| --- | --- |
+| `/ctitle list` | List the titles you have |
+| `/ctitle set <ID>` | Wear a title |
+| `/ctitle clear` | Remove your title |
+
+<Callout type="warn" title="A title or a badge, not both">
+  Only one of a title or a [Compression Artisan badge](/en/docs/artisan) can show in front of your name. On the Nation server, wearing a title removes your badge, and wearing a badge removes your title. On the Resource server's TAB, your title shows instead of your badge while you wear one.
+</Callout>
+
+## 🎨 Seeing title icons
+
+Title icons are in the resource pack. Accept the resource pack when the server asks you on joining. Once accepted, it does not reload when you move between servers.
+
+## ❓ FAQ
+
+<Accordions>
+  <Accordion title="My title shows as a square">
+    Without the resource pack, title icons show as squares. Rejoin the server and accept the resource pack.
+  </Accordion>
+  <Accordion title="My title came off">
+    Wearing a Compression Artisan badge removes your title. You can wear only one of a title or a badge.
+  </Accordion>
+  <Accordion title="The tabs do not show on the advancements screen">
+    Rejoin the server and they will show.
+  </Accordion>
+</Accordions>
