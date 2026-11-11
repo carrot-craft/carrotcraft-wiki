@@ -1,0 +1,131 @@
+---
+title: Special Items
+description: Summer festival and Halloween items that play an effect and a move when used. Sold in a weekly shop
+icon: sparkles
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Callout type="info" title="What are special items?">
+  Items that play a different **effect and move** for each item when used. There are summer festival items and Halloween decorations. **They are not used up**, and you can use them again once the wait is over.
+</Callout>
+
+## 🥕 In short
+
+<Cards>
+  <Card title="1. Buy in the shop or win from a crate" description="One item is listed every Saturday at 18:00 (JST). They also come from vote crates." />
+  <Card title="2. Use it to see the effect" description="Eat a food, or right-click / wear the other items." />
+  <Card title="3. Use it again after the wait" description="While the item in your hotbar has a white overlay, you cannot use it." />
+</Cards>
+
+***
+
+## 🍡 Items and effects
+
+<Tabs items={['Summer festival', 'Halloween']}>
+  <Tab value="Summer festival">
+    When you finish eating a food, it floats above your head and moves.
+
+    | Item | Tier | Effect and move |
+    | --- | --- | --- |
+    | Yuyu Plush | ★5 | Sneak + right-click to use. The plush floats in front of you, bounces and spins, and hearts spread out. You hop and float a little, and nearby animals come to you. Right-click alone switches it to its reverse form |
+    | Chilled Pineapple | ★4 | Cold air swirls. You throw the pineapple ahead; it bursts where it lands and knocks back nearby hostile mobs |
+    | Cotton Candy | ★4 | A fluffy cloud grows above your head. You float up and drift down on the cloud |
+    | Candy Apple | ★4 | The candy cracks. For a short time you run faster and jump higher |
+    | Tornado Potato | ★3 | A tornado lifts you up and blows nearby hostile mobs into the air |
+    | Chilled Cucumber | ★3 | Water rings spread at your feet. For a short time you swim faster and can breathe underwater |
+    | Grilled Squid | ★3 | The squid wiggles and squirts ink, blinding nearby hostile mobs (you cannot see for a moment too) |
+    | Shaved Ice | ★3 | Snow falls and you get brain freeze. You shoot five snowballs in a fan |
+    | Yakitori | ★2 | The skewer turns over charcoal. Nearby hostile mobs catch fire |
+    | Yakisoba | ★2 | It flips in the air like on a griddle. The smell draws nearby animals to you |
+    | Choco Banana | ★2 | Chocolate drips and sprinkles burst. You drop a banana peel; a hostile mob that steps on it slips and falls |
+    | Takoyaki | ★2 | It hops and the bonito flakes dance. One in eight is extra spicy: you breathe fire that burns hostile mobs in front and run faster for a moment |
+    | Karaage | ★1 | Golden sparkles and lemon. Nearby chickens run away |
+    | Frankfurter | ★1 | Ketchup and mustard go on. You squirt ketchup that knocks back the hostile mob in front |
+    | Ramune | ★1 | Your marble fortune appears above your head. Great luck lifts you high; bad luck slows you a little |
+    | Draft Beer | ★1 | Foam overflows. You stagger for a short time |
+  </Tab>
+  <Tab value="Halloween">
+    Items marked "Head" are worn on the head (the coffin and bat wings appear on your back). While worn they show a small effect, and **sneaking** plays a bigger one. The others are held and right-clicked.
+
+    | Item | Tier | How to use | Effect and move |
+    | --- | --- | --- | --- |
+    | Coffin | ★5 | Head | Souls slip out now and then. Sneak for fog and a bell; undead mobs ignore you for a while |
+    | Reaper's Scythe | ★4 | Right-click | A large scythe sweeps in front of you and knocks back nearby hostile mobs |
+    | Cat Ears | ★4 | Head | You leave paw prints as you walk. Sneak to meow and jump high; nearby creepers run away |
+    | Magic Wand | ★3 | Right-click | Draws a magic circle and fires a star. The hostile mob you look at floats and glows |
+    | Broom Stick | ★3 | Right-click | The broom circles you and flies off. You dash forward and glide |
+    | Witch Hat | ★3 | Head | The tip of the hat sparkles. Sneak for a magic circle and a cauldron; nearby hostile mobs slow down |
+    | Coffin ver2 | ★3 | Right-click | A coffin rises and a column of fog appears. You vanish for a moment and mobs ignore you |
+    | Pumpkin Lantern | ★2 | Right-click | The lantern lights above your head and small pumpkins circle you. You can see in the dark, and nearby hostile mobs back away |
+    | Bat Wings | ★2 | Head | Black specks at the wing tips. Sneak to fly up as bats take off |
+    | Piñata | ★1 | Right-click | It gets hit and bursts, raining sweets and confetti |
+    | Crystal Ball | ★1 | Right-click | The ball floats and shows a fortune. Nearby creatures glow |
+  </Tab>
+</Tabs>
+
+<Callout type="warn" title="Where moves do not happen">
+  Inside a town where you cannot build, or in a protected area, **only the effect** plays and no move happens. Moves on mobs and animals also do not happen when they are in such a place.
+</Callout>
+
+- The wait is per item and per **player**. Switching items does not skip it, and it stays when you log out
+- Moves only affect you, hostile mobs and certain animals. They never affect other players, tamed animals, named mobs, villagers or bosses. The shaved ice snowballs do not hit players either
+- Eating a food does not restore hunger
+- They also work on the resource server
+- Special items cannot be put in a composter
+
+***
+
+## 🛒 Special item shop
+
+<Steps>
+  <Step>
+    **Open `/market`**
+
+    Press "Choose a shop" on the market screen and select "Special Items".
+  </Step>
+  <Step>
+    **Click this week's item**
+
+    Check the price on the confirmation screen and buy it. Spent CC is not refunded.
+  </Step>
+</Steps>
+
+| Item | Details |
+| --- | --- |
+| Rotation | Every **Saturday 18:00 (JST)**, **one** item is picked at random from the items above |
+| Price | ★5 200,000 CC · ★4 100,000 CC · ★3 50,000 CC · ★2 30,000 CC · ★1 10,000 CC |
+| Limit | **One** per player per week (other accounts of the same person count together) |
+| Spent CC | Goes nowhere and disappears |
+
+***
+
+## 🎟️ From vote crates
+
+The vote crate and the VoteParty crate can give a **Special Item Crate Key**. Right-click with the key to open it and you **always get one** special item.
+
+***
+
+## ❓ FAQ
+
+<Accordions>
+  <Accordion title="Nothing happens when I use it">
+    You are still waiting. While the item in your hotbar has a white overlay, you cannot use it.
+  </Accordion>
+  <Accordion title="The effect plays, but I don't float and mobs don't move">
+    You are inside a town where you cannot build, or in a protected area. Only the effect plays there.
+  </Accordion>
+  <Accordion title='It says "You already bought this item this week"'>
+    The same item is limited to one per player per week, including purchases on your other accounts.
+  </Accordion>
+  <Accordion title="The item I want is not in the shop">
+    The shop lists only one item a week. Buy from a player who has it, try for a Special Item Crate Key from vote crates, or wait for next week.
+  </Accordion>
+  <Accordion title="Can I sell special items at the market?">
+    They cannot be sold at the market or the buyback shop.
+  </Accordion>
+</Accordions>
