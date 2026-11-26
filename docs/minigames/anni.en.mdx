@@ -1,0 +1,329 @@
+---
+title: ANNI
+description: A guide to the team game where you defend your Nexus and destroy the other teams' Nexuses
+icon: shield
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Shield, Swords, Hourglass, Users, MapIcon, Trophy } from 'lucide-react';
+
+<Callout type="info" title="ANNI (Annihilation)">
+Players are split into up to 4 teams. Defend your team's **Nexus** while destroying the Nexuses of the other teams. The last team with a Nexus standing wins. Gather resources, build up your gear, and use your class abilities to share the work of attacking and defending.
+</Callout>
+
+<Cards>
+  <Card icon={<Trophy />} title="How to win" description="When only one team still has a Nexus, it wins. If nothing is decided by the end of Phase V, the team with the most Nexus health left wins." />
+  <Card icon={<Hourglass />} title="Length" description="Phases I-IV last 10 minutes each, and Phase V up to 20 minutes. A game takes about an hour at most." />
+  <Card icon={<Users />} title="Players" description="The game starts once 4 players are in. With 12 or more players there are 4 teams; with fewer, 2 teams." />
+  <Card icon={<MapIcon />} title="Map" description="Official games use Vanilla. Custom rooms can pick other maps." />
+</Cards>
+
+## Game Flow
+
+<Steps>
+<Step>
+### Joining and Voting
+
+Choose "Join a game" in the lobby to enter the queue for an official game. Once 4 players are in, a 2-minute countdown starts and the voting screen opens. You vote on these 2 things:
+
+- PvP (old = 1.8-style spam clicking / new = current combat)
+- Skipping the wait (once more than half of the waiting players vote, 10 seconds remain)
+</Step>
+<Step>
+### Team Assignment
+
+With 12 or more players, the game is played with 4 teams. With fewer, it is played with 2 teams. Parties of up to 3 players are placed on the same team. Everyone else is assigned so that the teams are balanced.
+</Step>
+<Step>
+### Phases I-V
+
+The game has 5 phases, and attacking gets easier as it goes (see the table below). Even after the game has started, you can join until the end of Phase II. You are placed on a team so that the size difference stays within 2 players. If there is no such team, you spectate until a slot opens.
+</Step>
+<Step>
+### Result
+
+When only one team still has a Nexus, that team wins. Phase V is cut off after 20 minutes, and the team with the most Nexus health left at that point wins.
+</Step>
+</Steps>
+
+### Phases
+
+| Phase | Length | What happens |
+|---|---|---|
+| I | 10 min | The Nexus cannot be damaged. Use this time to gather resources and gear up |
+| II | 10 min | Nexuses can now be damaged. This is the last phase in which new players can join |
+| III | 10 min | Diamonds appear in the center. Witches appear |
+| IV | 10 min | Bosses appear. Blaze Powder goes on sale at the brewing shop |
+| V | up to 20 min | Each hit on a Nexus takes off 2. The phase is cut off after 20 minutes |
+
+## Map (Vanilla)
+
+Official games are played on **Vanilla**, a map built by the Carrot staff. The four bases are in the four corners, and every base is the same layout rotated by 90 degrees.
+
+- A **base** is a round tower. The ground floor has the spawn point, the shop signs, and the Nether portal, and the Nexus is at the very top. Stairs inside the central pillar lead to the upper floors, and a ladder leads to the top.
+- Under the **center**, 8 diamond ore blocks appear in Phase III.
+- One **witch** appears at the edge of each of the 4 ponds. The color of the banners around a pond is the color of the nearest base's team.
+- The **boss gates** are End Portal frames in the caves at the west and east edges. They are open only while a boss is alive.
+- Outside the map is the void. You die immediately if you fall into it.
+
+## Nexus
+
+The **End Stone** at each team's base is its Nexus. Any tool can mine it, and each block mined takes 1 health off.
+
+- It cannot be damaged during Phase I. Your own team's Nexus cannot be damaged either.
+- Handymen have a chance to heal their own Nexus when they mine it. Healing is the only thing that can raise it above the starting 75, up to 100.
+- A team whose Nexus is destroyed can no longer respawn. Surviving players can keep fighting until they die.
+- Inside the building that holds a Nexus, blocks cannot be placed or broken (the area is set for each map). The same goes for the areas around spawn points, shops, and furnaces.
+- While your Nexus is being damaged, everyone on your team gets a notice and a warning sound. When a teammate damages an enemy Nexus, team chat shows a message like "X damaged Red's Nexus by 1 (69 left)".
+
+## Resources
+
+Items you get from breaking blocks go straight into your inventory. Broken blocks return after a short wait.
+
+| Block | Drops | Respawn time |
+|---|---|---|
+| Coal Ore | Coal | 10 sec |
+| Iron Ore | Raw Iron | 20 sec |
+| Gold Ore | Raw Gold | 20 sec |
+| Diamond Ore | Diamond | 30 sec |
+| Emerald Ore | Emerald | 40 sec |
+| Redstone Ore | 4-5 Redstone | 20 sec |
+| Lapis Lazuli Ore | 4-8 Lapis Lazuli | 10 sec |
+| Logs and wood (any tree) | Oak Log | 10 sec |
+| Gravel | Arrow, Flint, Feather, String, Bone | 20 sec |
+| Melon | 3-7 Melon Slices | 10 sec |
+
+- Blocks that are mined with a pickaxe, axe, or shovel cannot be broken without that tool. Melons can be broken with an axe or a sword.
+- Gravel does not fall.
+- Hostile mobs do not spawn (only witches and bosses appear).
+
+## Base Facilities
+
+<Tabs items={['Shops', 'Ender Furnace', 'Nether Portal', 'Soulbound']}>
+<Tab value="Shops">
+
+Right-click a sign at your base to open a shop. Prices are in **Gold Ingots**.
+
+| Weapon Shop | Gold | Brewing Shop | Gold |
+|---|---|---|---|
+| Iron Helmet | 6 | Brewing Stand | 10 |
+| Iron Chestplate | 10 | 3 Glass Bottles | 1 |
+| Iron Leggings | 8 | Nether Wart | 5 |
+| Iron Boots | 5 | Redstone | 3 |
+| Iron Sword | 5 | Glowstone Dust | 3 |
+| Bow | 5 | Fermented Spider Eye | 3 |
+| 16 Arrows | 2 | Gunpowder | 3 |
+| 4 Bread | 2 | Magma Cream, Sugar, Spider Eye | 2 each |
+| 16 Melon Slices | 2 | Glistering Melon Slice, Golden Carrot | 2 each |
+| Cake | 5 | Ghast Tear | 15 |
+| | | Blaze Powder (from Phase IV) | 15 |
+
+Ender Pearls cannot be bought in the shop. You get them as boss rewards.
+
+</Tab>
+<Tab value="Ender Furnace">
+
+Right-click a furnace at your base to open your own furnace. Its contents are not shared with other players and stay with you for the whole game.
+
+- It needs no fuel. Just put in the ingredients and they smelt.
+- It smelts faster than a regular furnace, and gets even faster as the phases progress.
+
+</Tab>
+<Tab value="Nether Portal">
+
+Entering a Nether portal does not take you to the Nether. What happens depends on which portal you enter.
+
+| Portal you enter | What happens |
+|---|---|
+| The Nether portal at your own base | The class screen opens, and the class you choose takes effect right away |
+| The Nether portal at an enemy base | You return to your spawn point |
+| The Nether portal in the boss room | You return to your spawn point |
+
+</Tab>
+<Tab value="Soulbound">
+
+Class tools and armor, and boss rewards, are **Soulbound**.
+
+- They disappear if you drop them.
+- You do not drop them when you die.
+- They cannot be put into containers such as chests.
+
+</Tab>
+</Tabs>
+
+## Gear Limits
+
+To keep the gap between long-time players and new players from growing too large, enchantments and potions have strength limits. Only boss rewards can exceed the limits.
+
+| Enchantment | Limit |
+|---|---|
+| Protection, Projectile Protection, Fire Protection, Blast Protection | II |
+| Sharpness, Power | II |
+| Efficiency, Unbreaking | III |
+| Fire Aspect, Knockback, Punch, Flame | I |
+| Thorns | Cannot be applied |
+
+- Enchanting does not require Lapis Lazuli.
+- Potions of Strength II, Instant Damage II, and Poison II cannot be made. If you try, you get level I.
+- In games where the largest team has 5 players or fewer, Potions of Invisibility cannot be made.
+- Enchanted Golden Apples cannot be used.
+
+## Classes
+
+Each class starts with different tools and abilities. Every class starts with a wooden sword, pickaxe, axe, and shovel (or better ones if the class has them), leather armor in your team color, and a compass that points to an enemy Nexus.
+
+### Changing Class
+
+- Enter the **Nether portal at your own base** to open the class screen. When you choose a class, it changes right away (only the class tools are swapped, and the items you have gathered stay with you).
+- If you choose from the menu or with `/anni class`, the change takes effect the next time you respawn.
+
+### Unlocking Classes
+
+You can use 5 classes from the start: Civilian, Miner, Lumberjack, Warrior, and Archer. In addition, 3 classes are free to use each week. You can unlock the rest with ANNI points. In custom rooms, all classes are available.
+
+<Accordions>
+<Accordion title="Support and Resource Classes">
+
+| Class | Points | Description |
+|---|---|---|
+| Civilian | Free | Stone tools and a chest. Carries a crafting table that you can right-click to craft anywhere |
+| Miner | Free | Stone Pickaxe with Efficiency I. Breaking ores gives double drops with an 80% chance |
+| Lumberjack | Free | Stone Axe with Efficiency I. Logs drop double. When you use the ability, each axe hit reduces the enemy's armor durability by 20 for 10 seconds (every 45 seconds) |
+| Enchanter | 1,000 | Double experience. 30% chance to get 1 of the spent levels back when enchanting. Using the bottle gives nearby teammates 1.25x experience for 30 seconds (every 120 seconds) |
+| Alchemist | 1,000 | Can place a brewing stand that only you can open. Brews faster. A book that produces potion ingredients every 90 seconds. Teammates cannot break the stand; enemies can break it or right-click it (the contents and the stand drop on the spot, and only the owner can pick up the stand) |
+| Transporter | 1,000 | Place 2 Quartz teleporters to make a pair, and teammates can sneak on one to move to the other. If an enemy breaks or right-clicks one, the whole pair is destroyed |
+| Handyman | 1,000 | Wooden Pickaxe with Efficiency I. Mining your own Nexus has a chance to heal it (Phase II 25%, III 20%, IV 15%, V 10%; heals 2 in Phase V). Can raise it up to 100 |
+
+</Accordion>
+<Accordion title="Combat Classes">
+
+| Class | Points | Description |
+|---|---|---|
+| Warrior | Free | Always deals 1 extra melee damage. Blaze Powder adds 1 more for 15 seconds (you also take more damage) |
+| Archer | Free | Bow damage is increased by half a heart, and arrows are not used up. Left-click the bow to switch between normal arrows, Arrow Rain, and Poison Arrows (45 seconds after use) |
+| Berserker | 1,500 | Max health increases with each kill and decreases when you die. A Netherite Ingot makes you enraged for 20 seconds: you get faster, and Immobilizer and Swapper no longer affect you |
+| Pyro | 1,500 | Permanent Fire Resistance. Melee hits have a 37% chance to set enemies on fire, and arrows become fire arrows. A fireball burns nearby enemies and gives teammates Fire Resistance |
+| Thor | 1,500 | Swing the Golden Axe to strike nearby enemies with lightning (5 damage, ignoring armor). You get Resistance I for 20 seconds |
+| Mercenary | 1,500 | A Skeleton Skull marks one enemy for 10 seconds. The marked enemy glows and takes 25% more damage from your teammates |
+
+</Accordion>
+<Accordion title="Mobility and Assault Classes">
+
+| Class | Points | Description |
+|---|---|---|
+| Acrobat | 1,500 | Can jump once more in the air (every 10 seconds). Takes no fall damage. Carries a bow and arrows |
+| Scout | 1,500 | Pulled to where the fishing rod hook lands on the ground. While holding the rod, fall damage is halved. Cannot be used for 5 seconds after you hit or get hit |
+| Assassin | 1,500 | A feather makes you leap far and become invisible for 6 seconds (your armor comes off). Invisibility ends when you take damage or break a block. Killing an enemy while invisible shortens the cooldown. Takes no fall damage |
+
+</Accordion>
+<Accordion title="Defense and Disruption Classes">
+
+| Class | Points | Description |
+|---|---|---|
+| Defender | 2,000 | Within 20 blocks of your own Nexus you regenerate, and you gain more health the lower the Nexus is. Within 50 blocks, Green Dye takes you back to the Nexus. Prismarine placed on the floor warns you when an enemy comes near (teammates cannot pick it up) |
+| Immobilizer | 2,000 | Freezes an enemy within 6 blocks that you are looking at for 4 seconds, and you cannot move for the same time (every 30 seconds). Does not work on an enraged Berserker |
+| Swapper | 2,000 | Swaps positions with an enemy within 16 blocks that you are looking at. Can only be used while standing on the ground (every 20 seconds) |
+| Scorpio | 2,000 | Throws a star. Right-click pulls the enemy it hits in front of you, and left-click launches you toward the teammate it hits (every 3 seconds). You and the pulled enemy take no fall damage for 10 seconds |
+
+</Accordion>
+</Accordions>
+
+<Callout type="warn" title="For Bedrock Edition players">
+Bedrock Edition cannot distinguish between right-click and left-click. Abilities that use left-click, such as the Archer's switch and the Scorpio's star toward a teammate, work with **sneak + right-click**.
+</Callout>
+
+## Witches
+
+- From Phase III, they appear at set places on the map. On Vanilla, that is at the edge of the pond in each team's banner color.
+- They stay where they are and cannot be pushed. They attack with potions when you come near.
+- They can only be hurt by player attacks (arrows included). When killed, they drop **Glowstone Dust** or **Gunpowder**, and appear again after 5 minutes.
+
+## Bosses
+
+From Phase IV, a boss appears on maps that have a boss location. It is one of Celariel the Ice Golem, Firwen the Fire Golem, or the Wither. On Vanilla, the boss waits in a room in the sky, and you fly there through the End Portal in the cave.
+
+- While a boss is alive, its remaining health is shown in its name, and nearby players see a boss bar.
+- When killed, it drops a <Item img="/items/nether_star.png" name="Boss's Blessing" />, and one is given to everyone on the team that picks it up. Right-click it to choose one reward. Rewards are Soulbound and exceed the gear limits.
+- To leave, step into a Nether portal in the room and you return to your own spawn.
+- A killed boss appears again after 10 minutes. The gates stay closed until then.
+
+<Accordions>
+<Accordion title="Boss rewards (17 items)">
+
+| Reward | Contents |
+|---|---|
+| Helmet of Extinguishment | Diamond Helmet. Protection III, Fire Resistance IV, Unbreaking III, Mending |
+| Chestplate of Fortitude | Diamond Chestplate. Protection III, Unbreaking III, Mending. Regeneration I when attacked |
+| Leggings of Swiftness | Diamond Leggings. Protection III, Unbreaking III, Mending. Speed I when attacked |
+| Boots of Grace | Diamond Boots. Protection III, Unbreaking III, Mending. Dolphin's Grace I when attacked |
+| Pick of Speed | Diamond Pickaxe. Efficiency III, Unbreaking X |
+| Pick of Fortune | Diamond Pickaxe. Fortune III, Unbreaking X |
+| Bow of Power | Bow. Power II, Flame |
+| Bow of Aether | Bow. Infinity. Enemies hit by its arrows float |
+| Sword of Venom | Diamond Sword. Poison I on the enemy you hit |
+| Sword of Flames | Diamond Sword. Fire Aspect II, Unbreaking X |
+| Sword of Looting | Diamond Sword. Looting I |
+| Splash Potion of Strength | Strength I, 3 min |
+| Splash Potion of Regeneration | Regeneration I, 45 sec |
+| Splash Potion of Invisibility | Invisibility, 8 min |
+| Potion of Haste | Haste II, 30 sec |
+| Splash Potion of Poison | Poison I, 45 sec |
+| 4 Ender Pearls | <Item img="/items/ender_pearl.png" name="Ender Pearl" /> × 4 |
+
+</Accordion>
+</Accordions>
+
+## Points and Stats
+
+You earn ANNI points when an official game ends. Points are used to unlock classes. Points for kills, Nexus damage, and bosses also show up in chat the moment you earn them, like "+3 points Kill".
+
+| Action | Points |
+|---|---|
+| Kill an enemy | 3 |
+| Damage a Nexus once | 1 (2 in Phase V) |
+| Destroy a Nexus (the final hit) | 20 |
+| Your team kills the boss | 25 (everyone on the team) |
+| Win | 100 |
+| Remaining health of the winning team's Nexus | 1 per health point |
+| Stay in the game until the end | 20 |
+
+Winning and staying to the end are worth the most, so the surest way to earn points is to stay in the game and play to win with your team. You can view stats and rankings from the menu, or with `/anni stats` and `/anni top`. Games in custom rooms do not count toward points or stats.
+
+## During a Game
+
+- **Chat**: Normally only your team can see it. Start a message with `!` to send it to everyone in the game. After the game ends, everyone can see it.
+- **Voice chat**: During a game you only hear players on your own team (with the Simple Voice Chat mod, or the web call from `/vc`).
+- **Death notices**: If you are killed near a Nexus (within 20 blocks to the side), the message says which one, like "X was killed by Y near Red's Nexus".
+- **If you disconnect**: If you return within 90 seconds, you can continue on your original team. The items you were carrying (except Soulbound ones) are dropped on the spot.
+- **The void**: If you fall outside or below the map, you die immediately.
+
+## Custom Rooms, Parties, and Spectating
+
+<Cards>
+  <Card icon={<Users />} title="Party" description="Use /party invite to form a party of up to 3. When a party joins a game, its members are placed on the same team." />
+  <Card icon={<Swords />} title="Custom Rooms" description="Use /anni room create to make a room. You can set the map, number of teams, PvP, phase lengths, player count, and a password, and a game can start with 2 players." />
+  <Card icon={<Shield />} title="Spectating" description="From the menu's Spectate option or /anni spectate, you can watch official games and games in rooms without a password." />
+</Cards>
+
+- Room games can run at the same time as official games. There is a limit on how many rooms can be open at once, and you cannot create one when it is full.
+- In the room settings, you can also turn on "Allow breaking around the Nexus" (off by default). Even when it is on, the areas around spawn points, shops, and furnaces stay protected.
+
+## Commands
+
+| Command | Description |
+|---|---|
+| `/anni` | Open the menu |
+| `/anni join` | Join an official game |
+| `/anni leave` | Leave a game, room, or spectating, and return to the waiting lobby |
+| `/anni class` | Choose a class |
+| `/anni vote` | Open the voting screen (`/anni vote skip` votes to skip the wait) |
+| `/anni team` | See the team sizes |
+| `/anni spectate` | Open the list of games you can spectate |
+| `/anni stats` / `/anni top` | View stats and rankings |
+| `/anni guide` | Open the crafting guide |
+| `/anni room` | Create, join, or configure a custom room |
+| `/party` | Form or leave a party |

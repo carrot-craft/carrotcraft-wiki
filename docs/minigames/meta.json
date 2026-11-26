@@ -1,5 +1,5 @@
 {
   "title": "ミニゲーム",
   "icon": "gamepad",
-  "pages": ["index", "magical-sheep", "chicken-bomber"]
+  "pages": ["index", "magical-sheep", "chicken-bomber", "anni"]
 }
